@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation FloatCursor</title>
+  <link rel="stylesheet" href="docs.css">
+</head>
+<body class="dark-theme">
+  <div class="container">
+    <header>
+      <nav class="navbar">
+        <div class="nav-brand">
+          <span class="logo">○ ◇ ▷</span>
+          <h1>FloatCursor Docs</h1>
+        </div>
+        <div class="nav-links">
+          <a href="#getting-started">Démarrage</a>
+          <a href="#features">Fonctionnalités</a>
+          <a href="#customization">Personnalisation</a>
+          <a href="#api">API</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle">
+          <span class="sun">☀️</span>
+          <span class="moon">🌙</span>
+        </button>
+      </nav>
+    </header>
+    
+    <main>
+      <aside class="sidebar">
+        <div class="sidebar-content">
+          <h3>Navigation</h3>
+          <ul class="sidebar-nav">
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#first-steps">Premiers pas</a></li>
+            <li><a href="#basic-usage">Utilisation de base</a></li>
+            <li><a href="#cursor-types">Types de curseurs</a></li>
+            <li><a href="#auto-change">Changement automatique</a></li>
+            <li><a href="#custom-cursors">Curseurs personnalisés</a></li>
+            <li><a href="#css-guide">Guide CSS</a></li>
+            <li><a href="#image-guide">Guide images</a></li>
+            <li><a href="#shortcuts">Raccourcis</a></li>
+            <li><a href="#troubleshooting">Dépannage</a></li>
+          </ul>
+          
+          <div class="sidebar-actions">
+            <a href="#" class="btn btn-sm" id="backToWelcome">
+              <span>👋</span> Retour à l'accueil
+            </a>
+            <a href="#" class="btn btn-sm btn-outline" id="openSettings">
+              <span>⚙️</span> Ouvrir paramètres
+            </a>
+          </div>
+        </div>
+      </aside>
+      
+      <div class="content">
+        <section id="getting-started" class="doc-section">
+          <h2>🚀 Démarrage rapide</h2>
+          
+          <article id="installation">
+            <h3>Installation</h3>
+            <p>FloatCursor est une extension Chrome qui peut être installée depuis le Chrome Web Store ou en mode développeur.</p>
+            
+            <div class="steps">
+              <div class="step">
+                <h4>Depuis le Chrome Web Store</h4>
+                <ol>
+                  <li>Ouvrez le <a href="#" class="external-link">Chrome Web Store</a></li>
+                  <li>Recherchez "FloatCursor"</li>
+                  <li>Cliquez sur "Ajouter à Chrome"</li>
+                  <li>Confirmez l'installation</li>
+                </ol>
+              </div>
+              
+              <div class="step">
+                <h4>En mode développeur</h4>
+                <ol>
+                  <li>Téléchargez le code source</li>
+                  <li>Ouvrez <code>chrome://extensions/</code></li>
+                  <li>Activez le "Mode développeur"</li>
+                  <li>Cliquez sur "Charger l'extension non empaquetée"</li>
+                  <li>Sélectionnez le dossier de l'extension</li>
+                </ol>
+              </div>
+            </div>
+          </article>
+          
+          <article id="first-steps">
+            <h3>Premiers pas</h3>
+            <p>Une fois installée, l'extension est prête à l'emploi. Par défaut :</p>
+            <ul>
+              <li>Le curseur "Cercle" est sélectionné</li>
+              <li>Le mode sombre est activé</li>
+              <li>Le changement automatique par site est activé</li>
+              <li>Les animations au clic sont activées</li>
+            </ul>
+          </article>
+        </section>
+        
+        <section id="features" class="doc-section">
+          <h2>✨ Fonctionnalités</h2>
+          
+          <article id="basic-usage">
+            <h3>Utilisation de base</h3>
+            <p>Cliquez sur l'icône FloatCursor dans la barre d'outils pour ouvrir le panneau de contrôle.</p>
+            
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h4>Sélection du curseur</h4>
+                <p>Choisissez parmi 6 curseurs prédéfinis ou vos créations personnalisées</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h4>Paramètres</h4>
+                <p>Activez/désactivez les fonctionnalités selon vos préférences</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h4>Par site</h4>
+                <p>Attribuez un curseur spécifique à chaque site web</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="feature-icon">💾</div>
+                <h4>Sauvegarde</h4>
+                <p>Exportez et importez vos paramètres</p>
+              </div>
+            </div>
+          </article>
+          
+          <article id="cursor-types">
+            <h3>Types de curseurs</h3>
+            <p>FloatCursor propose 6 curseurs minimalistes par défaut :</p>
+            
+            <div class="cursors-grid">
+              <div class="cursor-type">
+                <div class="cursor-preview circle">○</div>
+                <h5>Cercle</h5>
+                <p>Simple et élégant, parfait pour une navigation quotidienne</p>
+              </div>
+              
+              <div class="cursor-type">
+                <div class="cursor-preview arrow">▷</div>
+                <h5>Flèche</h5>
+                <p>Directionnel, idéal pour la productivité</p>
+              </div>
+              
+              <div class="cursor-type">
+                <div class="cursor-preview square">◇</div>
+                <h5>Carré</h5>
+                <p>Moderne et géométrique</p>
+              </div>
+              
+              <div class="cursor-type">
+                <div class="cursor-preview diamond">◈</div>
+                <h5>Losange</h5>
+                <p>Élégant et sophistiqué</p>
+              </div>
+              
+              <div class="cursor-type">
+                <div class="cursor-preview cross">+</div>
+                <h5>Croix</h5>
+                <p>Précis, parfait pour la conception</p>
+              </div>
+              
+              <div class="cursor-type">
+                <div class="cursor-preview heart">♥</div>
+                <h5>Cœur</h5>
+                <p>Ludique et amusant</p>
+              </div>
+            </div>
+          </article>
+          
+          <article id="auto-change">
+            <h3>Changement automatique</h3>
+            <p>Cette fonctionnalité intelligente change le curseur en fonction du site visité.</p>
+            
+            <div class="info-card">
+              <h4>Comment ça marche ?</h4>
+              <p>FloatCursor génère un hash unique à partir du nom de domaine du site, puis sélectionne un curseur basé sur ce hash.</p>
+              
+              <div class="code-block">
+                <pre><code>// Pseudo-code de l'algorithme
+function selectCursorByHostname(hostname) {
+  let hash = 0;
+  for (let char of hostname) {
+    hash = ((hash << 5) - hash) + charCode;
+  }
+  const cursorIndex = Math.abs(hash) % availableCursors.length;
+  return availableCursors[cursorIndex];
+}</code></pre>
+              </div>
+              
+              <p class="note">💡 <strong>Astuce :</strong> Vous pouvez désactiver cette fonctionnalité ou attribuer manuellement des curseurs à des sites spécifiques.</p>
+            </div>
+          </article>
+        </section>
+        
+        <section id="customization" class="doc-section">
+          <h2>🎨 Personnalisation avancée</h2>
+          
+          <article id="custom-cursors">
+            <h3>Curseurs personnalisés</h3>
+            <p>Créez vos propres curseurs de deux manières :</p>
+            
+            <div class="customization-options">
+              <div class="option-card">
+                <div class="option-header">
+                  <span class="option-icon">🎨</span>
+                  <h4>CSS personnalisé</h4>
+                </div>
+                <p>Écrivez votre propre CSS pour créer des curseurs uniques</p>
+                <ul>
+                  <li>Contrôle total sur l'apparence</li>
+                  <li>Animations CSS avancées</li>
+                  <li>Effets de survol personnalisés</li>
+                </ul>
+                <a href="#css-guide" class="btn-link">Voir le guide CSS →</a>
+              </div>
+              
+              <div class="option-card">
+                <div class="option-header">
+                  <span class="option-icon">🖼️</span>
+                  <h4>Images</h4>
+                </div>
+                <p>Utilisez vos propres images (PNG, SVG, JPG)</p>
+                <ul>
+                  <li>Support de la transparence</li>
+                  <li>Animations GIF</li>
+                  <li>SVG vectoriels</li>
+                </ul>
+                <a href="#image-guide" class="btn-link">Voir le guide images →</a>
+              </div>
+            </div>
+          </article>
+          
+          <article id="css-guide">
+            <h3>Guide CSS personnalisé</h3>
+            
+            <div class="guide-section">
+              <h4>Structure de base</h4>
+              <p>Tous les curseurs personnalisés doivent utiliser la classe <code>.float-cursor</code> comme base :</p>
+              
+              <div class="code-block">
+                <pre><code>/* Structure minimale */
+.float-cursor.custom-cursor {
+  width: 32px;
+  height: 32px;
+  /* Votre CSS ici */
+}</code></pre>
+              </div>
+            </div>
+            
+            <div class="guide-section">
+              <h4>Exemples complets</h4>
+              
+              <div class="example-grid">
+                <div class="example">
+                  <h5>Curseur pastel animé</h5>
+                  <div class="code-block">
+                    <pre><code>.float-cursor.pastel-animated {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, 
+    #ffb8d9 0%, 
+    #b8e1ff 50%, 
+    #c5b8ff 100%);
+  border-radius: 50%;
+  border: 2px solid white;
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}</code></pre>
+                  </div>
+                </div>
+                
+                <div class="example">
+                  <h5>Curseur avec effet de pulsation</h5>
+                  <div class="code-block">
+                    <pre><code>.float-cursor.pulse-cursor {
+  width: 24px;
+  height: 24px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="guide-section">
+              <h4>Propriétés CSS utiles</h4>
+              <table class="properties-table">
+                <thead>
+                  <tr>
+                    <th>Propriété</th>
+                    <th>Description</th>
+                    <th>Exemple</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>mix-blend-mode</code></td>
+                    <td>Contrôle comment le curseur se mélange avec l'arrière-plan</td>
+                    <td><code>mix-blend-mode: difference;</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>filter</code></td>
+                    <td>Applique des effets graphiques</td>
+                    <td><code>filter: drop-shadow(0 0 8px #000);</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>clip-path</code></td>
+                    <td>Crée des formes complexes</td>
+                    <td><code>clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>transform</code></td>
+                    <td>Transformations 2D/3D</td>
+                    <td><code>transform: rotate(45deg) scale(1.2);</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          
+          <article id="image-guide">
+            <h3>Guide des images</h3>
+            
+            <div class="guide-section">
+              <h4>Recommandations techniques</h4>
+              <div class="recommendations">
+                <div class="recommendation">
+                  <h5>📐 Taille optimale</h5>
+                  <p>32x32 à 64x64 pixels</p>
+                  <small>Plus grand = plus lourd, plus petit = pixelisé</small>
+                </div>
+                
+                <div class="recommendation">
+                  <h5>🎨 Format recommandé</h5>
+                  <p>PNG avec transparence</p>
+                  <small>Meilleure qualité avec fond transparent</small>
+                </div>
+                
+                <div class="recommendation">
+                  <h5>⚖️ Poids maximum</h5>
+                  <p>50KB par image</p>
+                  <small>Pour des performances optimales</small>
+                </div>
+                
+                <div class="recommendation">
+                  <h5>🌈 Espace colorimétrique</h5>
+                  <p>sRGB</p>
+                  <small>Standard web, affichage cohérent</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="guide-section">
+              <h4>Outils recommandés</h4>
+              <ul class="tools-list">
+                <li>
+                  <strong>Figma</strong> - Conception vectorielle gratuite
+                  <a href="https://figma.com" class="external-link">Visiter</a>
+                </li>
+                <li>
+                  <strong>Canva</strong> - Design simplifié
+                  <a href="https://canva.com" class="external-link">Visiter</a>
+                </li>
+                <li>
+                  <strong>SVGOMG</strong> - Optimisation SVG
+                  <a href="https://jakearchibald.github.io/svgomg/" class="external-link">Visiter</a>
+                </li>
+                <li>
+                  <strong>TinyPNG</strong> - Compression PNG
+                  <a href="https://tinypng.com" class="external-link">Visiter</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </section>
+        
+        <section id="shortcuts" class="doc-section">
+          <h2>⌨️ Raccourcis clavier</h2>
+          
+          <div class="shortcuts-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Raccourci</th>
+                  <th>Action</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd></td>
+                  <td>Ouvrir le menu</td>
+                  <td>Affiche le menu rapide des curseurs</td>
+                </tr>
+                <tr>
+                  <td><kbd>Échap</kbd></td>
+                  <td>Fermer le menu</td>
+                  <td>Ferme le menu des curseurs</td>
+                </tr>
+                <tr>
+                  <td><kbd>Tab</kbd></td>
+                  <td>Navigation</td>
+                  <td>Navigue entre les options du menu</td>
+                </tr>
+                <tr>
+                  <td><kbd>Entrée</kbd></td>
+                  <td>Sélectionner</td>
+                  <td>Sélectionne l'option courante</td>
+                </tr>
+                <tr>
+                  <td><kbd>Flèches</kbd></td>
+                  <td>Navigation</td>
+                  <td>Navigue dans les listes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        
+        <section id="troubleshooting" class="doc-section">
+          <h2>🔧 Dépannage</h2>
+          
+          <div class="faq">
+            <details>
+              <summary>Le curseur ne s'affiche pas sur certains sites</summary>
+              <div class="faq-content">
+                <p>Certains sites web (comme les jeux, applications web complexes) peuvent désactiver les curseurs personnalisés.</p>
+                <p><strong>Solution :</strong> Essayez de désactiver et réactiver l'extension, ou vérifiez si le site utilise des iframes.</p>
+              </div>
+            </details>
+            
+            <details>
+              <summary>L'extension ralentit mon navigateur</summary>
+              <div class="faq-content">
+                <p>FloatCursor est optimisé pour être léger, mais les curseurs personnalisés avec des animations complexes peuvent impacter les performances.</p>
+                <p><strong>Solution :</strong> Désactivez les animations complexes ou réduisez la taille des images personnalisées.</p>
+              </div>
+            </details>
+            
+            <details>
+              <summary>Les curseurs personnalisés ne s'enregistrent pas</summary>
+              <div class="faq-content">
+                <p>Assurez-vous que votre CSS est valide et que les images ne dépassent pas la taille maximale recommandée.</p>
+                <p><strong>Solution :</strong> Vérifiez la console du navigateur (F12) pour les erreurs, et utilisez des outils de validation CSS en ligne.</p>
+              </div>
+            </details>
+            
+            <details>
+              <summary>Le mode sombre ne fonctionne pas sur certains sites</summary>
+              <div class="faq-content">
+                <p>Le mode sombre de FloatCursor s'applique uniquement à l'interface de l'extension, pas aux sites web visités.</p>
+                <p><strong>Solution :</strong> Pour les sites web, utilisez une extension dédiée au mode sombre comme Dark Reader.</p>
+              </div>
+            </details>
+          </div>
+          
+          <div class="support">
+            <h3>Besoin d'aide supplémentaire ?</h3>
+            <p>Contactez-nous ou consultez les ressources suivantes :</p>
+            
+            <div class="support-links">
+              <a href="#" class="support-link">
+                <span>📧</span>
+                <div>
+                  <strong>Support par email</strong>
+                  <small>Réponse sous 24h</small>
+                </div>
+              </a>
+              
+              <a href="#" class="support-link">
+                <span>💬</span>
+                <div>
+                  <strong>Communauté Discord</strong>
+                  <small>Discutez avec d'autres utilisateurs</small>
+                </div>
+              </a>
+              
+              <a href="#" class="support-link">
+                <span>📖</span>
+                <div>
+                  <strong>Guide complet</strong>
+                  <small>Documentation détaillée</small>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+    <footer class="doc-footer">
+      <div class="footer-content">
+        <div class="footer-info">
+          <div class="footer-logo">
+            <span class="logo">○ ◇ ▷</span>
+            <div>
+              <h4>FloatCursor</h4>
+              <p>Des curseurs minimalistes pour une meilleure navigation</p>
+            </div>
+          </div>
+          <p class="version">Version 1.1.0</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="link-group">
+            <h5>Ressources</h5>
+            <a href="#">Télécharger</a>
+            <a href="#">Code source</a>
+            <a href="#">Changelog</a>
+          </div>
+          
+          <div class="link-group">
+            <h5>Support</h5>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+            <a href="#">Signaler un bug</a>
+          </div>
+          
+          <div class="link-group">
+            <h5>Légal</h5>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#">Conditions d'utilisation</a>
+            <a href="#">Licence</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2024 FloatCursor. Tous droits réservés.</p>
+        <p>Extension Chrome créée avec ❤️ pour la communauté.</p>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="docs.js"></script>
+</body>
+</html>
