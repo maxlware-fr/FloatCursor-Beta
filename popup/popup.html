@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FloatCursor Settings</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="dark-theme">
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <h1><span class="logo">○ ◇ ▷</span> FloatCursor</h1>
+        <button class="theme-toggle" id="themeToggle" aria-label="Basculer thème">
+          <span class="sun">☀️</span>
+          <span class="moon">🌙</span>
+        </button>
+      </div>
+      <p class="subtitle">Curseurs minimalistes pastel</p>
+      <div class="header-buttons">
+        <button class="header-btn" id="openWelcome">
+          <span>👋</span> Bienvenue
+        </button>
+        <button class="header-btn" id="openDocs">
+          <span>📚</span> Documentation
+        </button>
+      </div>
+    </header>
+    
+    <div class="section">
+      <h2><span>🎯</span> Curseurs disponibles</h2>
+      <div class="cursor-grid" id="cursorGrid">
+      </div>
+      <div class="custom-cursor-section">
+        <button class="btn-secondary" id="addCustomCursor">
+          <span>➕</span> Ajouter un curseur personnalisé
+        </button>
+        <div class="custom-cursors-list" id="customCursorsList">
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2><span>⚙️</span> Paramètres</h2>
+      
+      <div class="setting">
+        <label class="switch">
+          <input type="checkbox" id="toggleExtension" checked>
+          <span class="slider"></span>
+        </label>
+        <div class="setting-info">
+          <span class="label">Activer FloatCursor</span>
+          <span class="description">Active/désactive l'extension sur tous les sites</span>
+        </div>
+      </div>
+      
+      <div class="setting">
+        <label class="switch">
+          <input type="checkbox" id="autoChange" checked>
+          <span class="slider"></span>
+        </label>
+        <div class="setting-info">
+          <span class="label">Changement automatique par site</span>
+          <span class="description">Change le curseur selon le site visité</span>
+        </div>
+      </div>
+      
+      <div class="setting">
+        <label class="switch">
+          <input type="checkbox" id="clickAnimation" checked>
+          <span class="slider"></span>
+        </label>
+        <div class="setting-info">
+          <span class="label">Animation au clic</span>
+          <span class="description">Affiche une animation lors des clics</span>
+        </div>
+      </div>
+      
+      <div class="setting">
+        <label class="switch">
+          <input type="checkbox" id="darkMode" checked>
+          <span class="slider"></span>
+        </label>
+        <div class="setting-info">
+          <span class="label">Mode sombre</span>
+          <span class="description">Interface en thème sombre</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2><span>🌐</span> Site actuel</h2>
+      <div class="current-site">
+        <div class="site-info" id="currentSiteInfo">
+          <div class="site-url">Chargement...</div>
+          <div class="site-cursor">Curseur: <span class="cursor-name">-</span></div>
+        </div>
+        <button id="assignCursor" class="btn-secondary">
+          <span>🔗</span> Attribuer un curseur spécifique
+        </button>
+      </div>
+    </div>
+    
+    <footer>
+      <div class="footer-buttons">
+        <button id="resetDefault" class="btn btn-danger">
+          <span>🔄</span> Rétablir défaut
+        </button>
+        <button id="exportSettings" class="btn">
+          <span>💾</span> Exporter
+        </button>
+        <button id="importSettings" class="btn">
+          <span>📂</span> Importer
+        </button>
+      </div>
+      <p class="version">FloatCursor v1.1 - Mode sombre activé</p>
+    </footer>
+  </div>
+  
+  <div class="modal" id="addCursorModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><span>🎨</span> Ajouter un curseur personnalisé</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="cursorName">Nom du curseur</label>
+          <input type="text" id="cursorName" placeholder="Mon curseur personnalisé">
+        </div>
+        
+        <div class="form-group">
+          <label>Type de curseur</label>
+          <div class="radio-group">
+            <label class="radio">
+              <input type="radio" name="cursorType" value="css" checked>
+              <span>CSS personnalisé</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="cursorType" value="image">
+              <span>Image (PNG, SVG)</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-group" id="cssCodeGroup">
+          <label for="cursorCSS">Code CSS</label>
+          <textarea id="cursorCSS" rows="6" placeholder="/* Votre CSS personnalisé ici */
+.float-cursor.custom-cursor {
+  width: 32px;
+  height: 32px;
+  background: #ff6b6b;
+  border-radius: 50%;
+  border: 2px solid white;
+}"></textarea>
+          <small>Utilisez la classe <code>.float-cursor.custom-cursor</code></small>
+        </div>
+        
+        <div class="form-group hidden" id="imageUploadGroup">
+          <label for="cursorImage">Image du curseur</label>
+          <input type="file" id="cursorImage" accept=".png,.svg,.jpg,.jpeg">
+          <div class="image-preview" id="imagePreview">
+            <span>Aperçu de l'image</span>
+          </div>
+          <small>Taille recommandée: 32x32 à 64x64 pixels</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="cursorColor">Couleur principale</label>
+          <input type="color" id="cursorColor" value="#ff6b6b">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary close-modal">Annuler</button>
+        <button class="btn" id="saveCustomCursor">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
