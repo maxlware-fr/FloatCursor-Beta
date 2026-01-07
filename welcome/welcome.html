@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenue sur FloatCursor</title>
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body class="dark-theme">
+  <div class="container">
+    <header class="hero">
+      <div class="logo-container">
+        <div class="logo-animation">
+          <div class="cursor-demo circle"></div>
+          <div class="cursor-demo arrow"></div>
+          <div class="cursor-demo square"></div>
+        </div>
+        <h1>Bienvenue sur <span class="gradient-text">FloatCursor</span></h1>
+        <p class="subtitle">Transformez votre expérience de navigation avec des curseurs minimalistes pastel</p>
+      </div>
+    </header>
+    
+    <main>
+      <section class="features">
+        <h2><span>✨</span> Fonctionnalités principales</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Curseurs pastel</h3>
+            <p>6 curseurs minimalistes avec des couleurs douces et apaisantes</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <h3>Changement automatique</h3>
+            <p>Le curseur change selon le site visité pour une expérience unique</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Animations fluides</h3>
+            <p>Effets subtils au clic et au survol des éléments</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌙</div>
+            <h3>Mode sombre</h3>
+            <p>Interface adaptative avec thème sombre et clair</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Personnalisation</h3>
+            <p>Ajoutez vos propres curseurs avec CSS ou images</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Léger et rapide</h3>
+            <p>Extension optimisée qui ne ralentit pas votre navigation</p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="quick-start">
+        <h2><span>🚀</span> Démarrage rapide</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Cliquez sur l'icône FloatCursor</h3>
+              <p>Dans la barre d'outils de Chrome, cliquez sur l'icône de l'extension pour ouvrir le panneau de contrôle</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Choisissez votre curseur</h3>
+              <p>Sélectionnez parmi les curseurs disponibles ou créez-en un personnalisé</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Personnalisez les paramètres</h3>
+              <p>Activez/désactivez les fonctionnalités selon vos préférences</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Profitez de votre navigation</h3>
+              <p>L'extension s'applique automatiquement à tous les sites web</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="shortcuts">
+        <h2><span>⌨️</span> Raccourcis clavier</h2>
+        <div class="shortcuts-grid">
+          <div class="shortcut-item">
+            <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd>
+            <span>Ouvre le menu rapide des curseurs</span>
+          </div>
+          <div class="shortcut-item">
+            <kbd>Échap</kbd>
+            <span>Ferme le menu des curseurs</span>
+          </div>
+        </div>
+      </section>
+      
+      <section class="customization">
+        <h2><span>🎨</span> Personnalisation avancée</h2>
+        <div class="customization-content">
+          <div class="code-example">
+            <h3>Ajouter un curseur CSS personnalisé</h3>
+            <pre><code>/* Exemple de curseur personnalisé */
+.float-cursor.my-custom-cursor {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.float-cursor.my-custom-cursor::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+}</code></pre>
+            <p>Utilisez la classe <code>.float-cursor</code> comme base pour vos créations</p>
+          </div>
+          
+          <div class="tips">
+            <h3>Conseils pour les images</h3>
+            <ul>
+              <li>Format recommandé: PNG avec transparence</li>
+              <li>Taille optimale: 32x32 à 64x64 pixels</li>
+              <li>Évitez les images trop lourdes (> 50KB)</li>
+              <li>Utilisez des couleurs qui contrastent avec les sites web</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+      <section class="actions">
+        <h2><span>🎯</span> Prêt à commencer ?</h2>
+        <div class="action-buttons">
+          <button class="btn btn-primary" id="openPopup">
+            <span>⚙️</span> Ouvrir les paramètres
+          </button>
+          <button class="btn btn-secondary" id="openDocs">
+            <span>📚</span> Documentation complète
+          </button>
+          <button class="btn btn-outline" id="startTutorial">
+            <span>🎓</span> Tutoriel interactif
+          </button>
+        </div>
+      </section>
+    </main>
+    
+    <footer>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" id="feedback">Donner votre avis</a>
+          <a href="#" id="reportIssue">Signaler un problème</a>
+          <a href="#" id="viewSource">Code source</a>
+        </div>
+        <p class="version">FloatCursor v1.1 - Made with ❤️ pour une meilleure navigation</p>
+        <p class="copyright">© 2024 FloatCursor. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="welcome.js"></script>
+</body>
+</html>
