@@ -1,0 +1,180 @@
+/* Exemples de curseurs personnalisés pour FloatCursor */
+
+/* 1. Curseur pastel animé */
+.float-cursor.pastel-animated {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, 
+    #ffb8d9 0%, 
+    #b8e1ff 50%, 
+    #c5b8ff 100%);
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 2. Curseur avec effet de pulsation */
+.float-cursor.pulse-cursor {
+  width: 24px;
+  height: 24px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* 3. Curseur étoile */
+.float-cursor.star-cursor {
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 24px solid #fbbf24;
+  position: relative;
+}
+
+.float-cursor.star-cursor::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: -16px;
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-top: 24px solid #fbbf24;
+}
+
+/* 4. Curseur fantôme (Halloween) */
+.float-cursor.ghost-cursor {
+  width: 32px;
+  height: 40px;
+  background: #8b5cf6;
+  border-radius: 50% 50% 0 0;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+.float-cursor.ghost-cursor::before,
+.float-cursor.ghost-cursor::after {
+  content: '';
+  position: absolute;
+  background: #8b5cf6;
+  border-radius: 50%;
+}
+
+.float-cursor.ghost-cursor::before {
+  width: 12px;
+  height: 12px;
+  top: 10px;
+  left: 4px;
+  background: white;
+}
+
+.float-cursor.ghost-cursor::after {
+  width: 12px;
+  height: 12px;
+  top: 10px;
+  right: 4px;
+  background: white;
+}
+
+.float-cursor.ghost-cursor::before {
+  box-shadow: 
+    0 16px 0 0 #8b5cf6,
+    0 32px 0 0 #8b5cf6;
+}
+
+/* 5. Curseur néon */
+.float-cursor.neon-cursor {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #00ffaa;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 10px #00ffaa,
+    inset 0 0 10px #00ffaa;
+  animation: neon-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+  0%, 100% { 
+    box-shadow: 
+      0 0 10px #00ffaa,
+      inset 0 0 10px #00ffaa;
+  }
+  50% { 
+    box-shadow: 
+      0 0 20px #00ffaa,
+      0 0 30px #00ffaa,
+      inset 0 0 20px #00ffaa;
+  }
+}
+
+/* 6. Curseur minimaliste avancé */
+.float-cursor.minimal-advanced {
+  width: 40px;
+  height: 40px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  position: relative;
+}
+
+.float-cursor.minimal-advanced::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.float-cursor.minimal-advanced::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* 7. Curseur image avec rotation */
+.float-cursor.image-rotating {
+  width: 32px;
+  height: 32px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%238b5cf6" stroke="white" stroke-width="5"/><circle cx="50" cy="50" r="15" fill="white"/></svg>');
+  background-size: contain;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
