@@ -1,0 +1,223 @@
+.float-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, opacity 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+.float-cursor.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.float-cursor.arrow {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.float-cursor.square {
+  width: 22px;
+  height: 22px;
+  border: 2px solid;
+  border-radius: 4px;
+}
+
+.float-cursor.diamond {
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.float-cursor.cross {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.float-cursor.cross::before,
+.float-cursor.cross::after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  border-radius: 2px;
+}
+
+.float-cursor.cross::before {
+  width: 20px;
+  height: 4px;
+  top: 10px;
+  left: 2px;
+  transform: rotate(45deg);
+}
+
+.float-cursor.cross::after {
+  width: 4px;
+  height: 20px;
+  top: 2px;
+  left: 10px;
+  transform: rotate(45deg);
+}
+
+.float-cursor.heart {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.float-cursor.heart::before,
+.float-cursor.heart::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 16px;
+  background-color: currentColor;
+  border-radius: 10px 10px 0 0;
+}
+
+.float-cursor.heart::before {
+  left: 10px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.float-cursor.heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.click-animation {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999998;
+  border-radius: 50%;
+  border: 2px solid;
+  transform: translate(-50%, -50%);
+  animation: pulse 0.5s ease-out forwards;
+}
+
+@keyframes pulse {
+  0% {
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+  }
+}
+
+body.float-cursor-active * {
+  cursor: none !important;
+}
+
+.float-cursor-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  z-index: 999999;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-width: 200px;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.float-cursor-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.float-cursor-menu h3 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #7e6bc9;
+  font-weight: 600;
+}
+
+.menu-cursor-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.menu-cursor-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.menu-cursor-option:hover {
+  background: rgba(126, 107, 201, 0.1);
+}
+
+.menu-cursor-preview {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.menu-cursor-name {
+  font-size: 10px;
+  color: #5a5560;
+}
+
+.menu-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.menu-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menu-btn.primary {
+  background: linear-gradient(135deg, #7e6bc9 0%, #6a5cb0 100%);
+  color: white;
+}
+
+.menu-btn.secondary {
+  background: rgba(126, 107, 201, 0.1);
+  color: #7e6bc9;
+}
+
+.menu-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(126, 107, 201, 0.2);
+}
